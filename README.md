@@ -1,6 +1,6 @@
-# appimagetool
+# appimagetool container images
 
-Docker image for [appimagetool](https://github.com/AppImage/appimagetool), a low-level tool to generate an AppImage from an existing AppDir.
+Automatically built and published container images for [appimagetool](https://github.com/AppImage/appimagetool), a low-level tool to generate an AppImage from an existing AppDir.
 
 ## Registries
 

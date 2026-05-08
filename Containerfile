@@ -1,5 +1,7 @@
 FROM alpine:latest
 
+ARG APPIMAGETOOL_VERSION=continuous
+
 RUN set -o xtrace \
     && apk update \
     && apk add --no-cache fuse3 file curl \
@@ -14,5 +16,5 @@ RUN set -o xtrace \
         i686) APPIMAGETOOL_ARCH=i686 ;; \
         *) echo "Unsupported architecture: $ARCH" && exit 1 ;; \
     esac \
-    && wget -O /usr/local/bin/appimagetool "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${APPIMAGETOOL_ARCH}.AppImage" \
+    && wget -O /usr/local/bin/appimagetool "https://github.com/AppImage/appimagetool/releases/download/${APPIMAGETOOL_VERSION}/appimagetool-${APPIMAGETOOL_ARCH}.AppImage" \
     && chmod +x /usr/local/bin/appimagetool

@@ -25,7 +25,6 @@ jobs:
       - uses: docker/build-push-action@v6
         with:
           context: .
-          file: Containerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/386
           build-args: APPIMAGETOOL_VERSION=${{ github.ref_name }}
           push: true

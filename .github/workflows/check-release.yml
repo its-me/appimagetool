@@ -1,4 +1,4 @@
-name: Check for new appimagetool release
+name: Check for new release
 
 on:
   schedule:

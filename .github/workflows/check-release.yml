@@ -23,9 +23,5 @@ jobs:
           latest=$(gh api repos/AppImage/appimagetool/releases \
             --jq '[.[] | select(.tag_name | test("^[0-9]+\\.[0-9]+\\.[0-9]+$"))] | .[0].tag_name')
           if ! git ls-remote --exit-code origin "refs/tags/$latest"; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git tag -a "$latest" -m "$latest"
-            git push origin "$latest"
-            gh workflow run release.yml --ref "$latest"
+            gh workflow run release.yml -f version="$latest"
           fi

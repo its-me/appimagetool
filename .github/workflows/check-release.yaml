@@ -23,5 +23,5 @@ jobs:
           latest=$(gh api repos/AppImage/appimagetool/releases \
             --jq '[.[] | select(.tag_name | test("^[0-9]+\\.[0-9]+\\.[0-9]+$"))] | .[0].tag_name')
           if ! git ls-remote --exit-code origin "refs/tags/$latest"; then
-            gh workflow run release.yml -f version="$latest"
+            gh workflow run release.yaml -f version="$latest"
           fi
